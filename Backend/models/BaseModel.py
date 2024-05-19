@@ -8,15 +8,16 @@ import uuid
 import sqlalchemy
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
-
+import models
 
 Base = declarative_base()
 
 class BaseModel:
     """The BaseModel class from which future classes will be derived"""
+    __abstract__ = True
     id = Column(String(60), primary_key=True)
-    created_at = Column(DateTime, default=datetime.now)
-    updated_at = Column(DateTime, default=datetime.now)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def __init__(self, *args, **kwargs):
         """Initialization of the base model"""
