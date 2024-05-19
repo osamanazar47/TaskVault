@@ -13,3 +13,7 @@ class Task(BaseModel, Base):
     title = Column(String(80), nullable=False)
     description = Column(Text, nullable=True)
     user_id = Column(String(128), ForeignKey('user.id'), nullable=False)
+
+    def __init__(self, *args, **kwargs):
+        """initializes Task"""
+        super().__init__(*args, **kwargs)

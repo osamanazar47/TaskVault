@@ -15,8 +15,13 @@ class User(BaseModel, Base):
     password_hash = Column(String(128), nullable=True)
     tasks = relationship('Task', backref='user', cascade='all, delete, delete-orphan', lazy=True)
 
+    def __init__(self, *args, **kwargs):
+        """initializes User"""
+        super().__init__(*args, **kwargs)
+
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
