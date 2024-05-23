@@ -4,7 +4,6 @@ initialize the models package
 """
 
 
-from models.Engine.db_storage import DBStorage
+from flask_sqlalchemy import SQLAlchemy
 
-storage = DBStorage()
-storage.reload()
+db = SQLAlchemy()
