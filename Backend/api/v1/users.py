@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """the user routes"""
 from flask import Blueprint, request, jsonify
-from Backend.models import storage, User
+from Backend.models import db, User
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
 user_bp = Blueprint('user_bp', __name__)
@@ -12,8 +12,7 @@ def register():
     data = request.get_json()
     new_user = User(name=data['name'])
     new_user.set_password(data['password'])
-    storage.new(new_user)
-    storage.save()
+    db.add(new_user)
     return jsonify({'message': 'User registered successfully'})
 
 # Login Route
@@ -45,8 +44,7 @@ def create_user():
     data = request.get_json()
     new_user = User(name=data['name'])
     new_user.set_password(data['password'])
-    storage.new(new_user)
-    storage.save()
+    db.add(new_user)
     return jsonify(new_user.to_dict()), 201
 
 @user_bp.route('/users/<int:user_id>', methods=['PUT'])

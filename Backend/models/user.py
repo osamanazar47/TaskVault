@@ -2,12 +2,12 @@
 """the User class"""
 from werkzeug.security import generate_password_hash, check_password_hash
 from Backend.models import db
-
-class User(db.Model):
+from models.BaseModel import BaseModel
+class User(db.Model, BaseModel):
     """class represents a user in TaskVault"""
-    id = db.Column(db.Integer, primary_key=True)
+    __tablename__ = 'users'
     name = db.Column(db.String(50), nullable=False)
-    password = db.Column(db.String(50), nullable=False)
+    password_hash = db.Column(db.String(50), nullable=False)
     tasks = db.relationship('Task', backref='user', lazy=True)
 
     def set_password(self, password):

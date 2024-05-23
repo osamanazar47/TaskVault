@@ -5,20 +5,16 @@ The BaseModel class which is the base clss for all other classes
 
 from datetime import datetime
 import uuid
-import sqlalchemy
-from sqlalchemy import Column, String, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-import models
+from models import db
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
 
-Base = declarative_base()
 
-class BaseModel(Base):
+class BaseModel(db.Model):
     __abstract__ = True
-    id = Column(String(60), primary_key=True, default=lambda: str(uuid.uuid4()))
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    id = db.Column(db.String(60), primary_key=True, default=lambda: str(uuid.uuid4()))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
