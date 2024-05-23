@@ -14,7 +14,6 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 classes = {"Task": Task, "User": User}
 
-
 class DBStorage:
     """interaacts with the MySQL database"""
     __engine = None
