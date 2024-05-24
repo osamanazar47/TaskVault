@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """The tasks routes"""
 from flask import Blueprint, request, jsonify
-from Backend.models import storage, Task
+from Backend.models.task import Task
+from Backend.models import db
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 task_bp = Blueprint('task_bp', __name__)

@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """the user routes"""
 from flask import Blueprint, request, jsonify
-from Backend.models import db, User
+from Backend.models import db
+from Backend.models.user import User
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
 user_bp = Blueprint('user_bp', __name__)
@@ -12,7 +13,8 @@ def register():
     data = request.get_json()
     new_user = User(name=data['name'])
     new_user.set_password(data['password'])
-    db.add(new_user)
+    db.session.add(new_user)
+    db.session.commit()
     return jsonify({'message': 'User registered successfully'})
 
 # Login Route
@@ -44,7 +46,8 @@ def create_user():
     data = request.get_json()
     new_user = User(name=data['name'])
     new_user.set_password(data['password'])
-    db.add(new_user)
+    db.session.add(new_user)
+    db.session.commit()
     return jsonify(new_user.to_dict()), 201
 
 @user_bp.route('/users/<int:user_id>', methods=['PUT'])
@@ -54,13 +57,13 @@ def update_user(user_id):
     data = request.get_json()
     user.name = data['name']
     user.set_password(data['password'])
-    storage.save()
+    db.session.commit()
     return jsonify(user.to_dict())
 
 @user_bp.route('/users/<int:user_id>', methods=['DELETE'])
 @jwt_required()
 def delete_user(user_id):
     user = User.query.get_or_404(user_id)
-    storage.delete(user)
-    storage.save()
+    db.session.delete(user)
+    db.sesiion.commit()
     return jsonify({'message': 'User deleted successfully'})

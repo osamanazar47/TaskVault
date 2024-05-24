@@ -5,7 +5,7 @@ The BaseModel class which is the base clss for all other classes
 
 from datetime import datetime
 import uuid
-from models import db
+from . import db
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
 
