@@ -3,6 +3,8 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from Backend.models import db
 from models.BaseModel import BaseModel
+
+
 class User(db.Model, BaseModel):
     """class represents a user in TaskVault"""
     __tablename__ = 'users'
