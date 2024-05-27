@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """ Flask application """
 from flask import Flask
-from config import Config
-from models import db
-from users import user_bp
-from tasks import task_bp
+from Backend.config import Config
+from Backend.models import db
+from Backend.api.v1.users import user_bp
+from Backend.api.v1.tasks import task_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)

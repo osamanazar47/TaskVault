@@ -17,3 +17,13 @@ class User(BaseModel):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def to_dict(self):
+        # Get the dictionary from BaseModel's to_dict method
+        user_dict = super().to_dict()
+        
+        # Add User-specific fields
+        user_dict.update({
+            'name': self.name,
+        })
+        return user_dict
