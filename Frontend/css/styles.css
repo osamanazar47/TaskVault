@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    flex: 1;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.intro-text {
+    width: 50%;
+    padding-right: 2rem;
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.signup-form {
+    width: 40%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+    margin-bottom: 1rem;
+}
+
+.google-signup {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.google-signup:hover {
+    background-color: #357ae8;
+}
+
+.signup-form p {
+    margin: 1rem 0;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.signup-form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.signup-form button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background-color: #357ae8;
+}
+
+.reviews {
+    background-color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.reviews h2 {
+    margin-bottom: 1rem;
+}
+
+.review {
+    max-width: 400px;
+    margin: 0 auto 1rem;
+}
+
+.review-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.review p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
