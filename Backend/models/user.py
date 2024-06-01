@@ -21,7 +21,7 @@ class User(BaseModel):
     def to_dict(self):
         # Get the dictionary from BaseModel's to_dict method
         user_dict = super().to_dict()
-        
+
         # Add User-specific fields
         user_dict.update({
             'name': self.name,

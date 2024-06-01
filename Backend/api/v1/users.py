@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """the user routes"""
 from flask import Blueprint, request, jsonify
-from Backend.models import db
-from Backend.models.user import User
+from models import db
+from models.user import User
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
 user_bp = Blueprint('user_bp', __name__)

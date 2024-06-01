@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """The tasks routes"""
 from flask import Blueprint, request, jsonify
-from Backend.models.task import Task
-from Backend.models import db
+from models.task import Task
+from models import db
 from datetime import datetime
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
