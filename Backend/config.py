@@ -15,6 +15,6 @@ url = 'mysql+mysqldb://{}:{}@{}/{}'.format(HBNB_MYSQL_USER,
 
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
+    SQLALCHEMY_DATABASE_URI = url
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = 'osama_nazar'
+    JWT_SECRET_KEY = getenv('SECRET_KEY') or 'you-will-never-guess'
