@@ -14,30 +14,11 @@
             <div class="tasks-section">
                 <h2>My Tasks</h2>
                 <div class="tasks-list">
+					{% for task in tasks %}
                     <div class="task-item">
-                        <p class="task-title">Complete the science project</p>
-                        <p class="task-due-date">Due date: 5/8/2024</p>
-                        <p class="task-desc">Description: Finish the final report and submit it.</p>
-                        <div class="task-buttons">
-                            <button class="edit-btn">Edit</button>
-                            <button class="delete-btn">Delete</button>
-                            <button class="complete-btn">Complete</button>
-                        </div>
-                    </div>
-                    <div class="task-item">
-                        <p class="task-title">Apply For the Scholarship</p>
-                        <p class="task-due-date">Due date: 5/15/2024</p>
-                        <p class="task-desc">Description: Gather all documents and submit the application online.</p>
-                        <div class="task-buttons">
-                            <button class="edit-btn">Edit</button>
-                            <button class="delete-btn">Delete</button>
-                            <button class="complete-btn">Complete</button>
-                        </div>
-                    </div>
-                    <div class="task-item">
-                        <p class="task-title">Visit my Grandparents</p>
-                        <p class="task-due-date">Due date: 5/6/2024</p>
-                        <p class="task-desc">Description: Spend the weekend with grandparents and help them with chores.</p>
+                        <p class="task-title">{{ task.title }}</p>
+                        <p class="task-due-date">{{ task.due_date }}</p>
+                        <p class="task-desc">{{ task.description }}</p>
                         <div class="task-buttons">
                             <button class="edit-btn">Edit</button>
                             <button class="delete-btn">Delete</button>
