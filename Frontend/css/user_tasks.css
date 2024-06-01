@@ -1,0 +1,112 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tasks Page Styling */
+.tasks-container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.tasks-section, .new-task-section {
+    width: 45%;
+}
+
+.tasks-section h2, .new-task-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tasks-list .task-item {
+    background: #eee;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-title, .task-due-date, .task-desc {
+    margin: 0 0 10px;
+}
+
+.task-buttons {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-item button {
+    background: #4285f4;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+.task-item button:hover {
+    background: #357ae8;
+}
+
+.new-task-section form {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-task-section input, .new-task-section textarea, .new-task-section button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.new-task-section input, .new-task-section textarea {
+    background: #fff;
+    color: #333;
+}
+
+.new-task-section button {
+    background: #4285f4;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.new-task-section button:hover {
+    background: #357ae8;
+}
