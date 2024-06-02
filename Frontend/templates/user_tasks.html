@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TaskVault</title>
-    <link rel="stylesheet" href="../css/user_tasks.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_tasks.css') }}">
 </head>
 <body>
     <div class="tasks-container">
@@ -25,6 +25,7 @@
                             <button class="complete-btn">Complete</button>
                         </div>
                     </div>
+					{% endfor %}
                 </div>
             </div>
             <div class="new-task-section">

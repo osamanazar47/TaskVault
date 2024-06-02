@@ -7,11 +7,15 @@ from flask_migrate import Migrate
 from api.v1.users import user_bp
 from api.v1.tasks import task_bp
 from models.task import Task
+from flask_jwt_extended import JWTManager
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__)
+app = Flask(__name__,
+            template_folder='../../../Frontend/templates',
+            static_folder='../../../Frontend/static')
 app.config.from_object(Config)
 db.init_app(app)
+jwt = JWTManager(app)
 
 migrate = Migrate(app, db)
 
