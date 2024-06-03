@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.ok) {
             const data = await response.json();
             localStorage.setItem('accessToken', data.access_token);
+            alert(data)
+            window.location.href = `http://127.0.0.1:5000/tasks/${data.user_id}`;
             alert('Login successful!');
             // Redirect to another page or show user-specific content
         } else {

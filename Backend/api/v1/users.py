@@ -43,7 +43,7 @@ def login():
     user = User.query.filter_by(name=data['name']).first()
     if user and user.check_password(data['password']):
         access_token = create_access_token(identity={'id': user.id, 'name': user.name})
-        return jsonify(access_token=access_token)
+        return jsonify({'user_id': user.id, 'access_token': access_token}), 200
     return jsonify({'message': 'Invalid credentials'}), 401
 
 # CRUD Operations

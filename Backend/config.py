@@ -3,15 +3,14 @@
 
 from os import getenv
 
-HBNB_MYSQL_USER = getenv('HBNB_MYSQL_USER')
-HBNB_MYSQL_PWD = getenv('HBNB_MYSQL_PWD')
-HBNB_MYSQL_HOST = getenv('HBNB_MYSQL_HOST')
-HBNB_MYSQL_DB = getenv('HBNB_MYSQL_DB')
-HBNB_ENV = getenv('HBNB_ENV')
-url = 'mysql+mysqldb://{}:{}@{}/{}'.format(HBNB_MYSQL_USER,
-                                      HBNB_MYSQL_PWD,
-                                      HBNB_MYSQL_HOST,
-                                      HBNB_MYSQL_DB)
+TV_MYSQL_USER = getenv('TV_MYSQL_USER')
+TV_MYSQL_PWD = getenv('TV_MYSQL_PWD')
+TV_MYSQL_HOST = getenv('TV_MYSQL_HOST')
+TV_MYSQL_DB = getenv('TV_MYSQL_DB')
+url = 'mysql+mysqldb://{}:{}@{}/{}'.format(TV_MYSQL_USER,
+                                      TV_MYSQL_PWD,
+                                      TV_MYSQL_HOST,
+                                      TV_MYSQL_DB)
 
 
 class Config:

@@ -29,10 +29,10 @@ def landing():
     return render_template('landing_page.html')
 
 # Route for user tasks page
-@app.route('/tasks', strict_slashes=False)
-def tasks():
-    tasks = Task.query.all()
-    return render_template('user_tasks.html', tasks=tasks)
+@app.route('/tasks/<user_id>', strict_slashes=False)
+def tasks(user_id):
+    tasks = Task.query.filter_by(user_id=user_id).all()
+    return render_template('user_tasks.html', tasks=tasks ,user_id=user_id)
 
 
 if __name__ == "__main__":
