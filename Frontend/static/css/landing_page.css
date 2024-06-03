@@ -1,141 +1,135 @@
-* {
-    box-sizing: border-box;
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f4f9;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
 }
 
 .header {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    color: white;
+    padding: 60px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 3em;
+    margin: 0;
 }
 
 .header p {
-    font-size: 1.2rem;
+    font-size: 1.2em;
+    margin: 10px 0 0;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
 }
 
-main {
-    flex: 1;
-}
-
-.intro {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 0;
-}
-
-.intro-text {
-    width: 50%;
-    padding-right: 2rem;
-}
-
-.intro-text h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.intro-text p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
-
-.signup-form {
-    width: 40%;
-    background-color: #fff;
+.intro, .reviews {
+    background: white;
+    padding: 40px;
+    margin: 20px 0;
     border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-.signup-form h2 {
-    margin-bottom: 1rem;
+.intro-text h2, .form-container h2, .reviews h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
 }
 
-.google-signup {
-    background-color: #4285f4;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    cursor: pointer;
-}
-
-.google-signup:hover {
-    background-color: #357ae8;
-}
-
-.signup-form p {
-    margin: 1rem 0;
-}
-
-.signup-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.signup-form input {
-    padding: 0.5rem;
-    font-size: 1rem;
-}
-
-.signup-form button {
-    background-color: #4a90e2;
-    color: #fff;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.signup-form button:hover {
-    background-color: #357ae8;
-}
-
-.reviews {
-    background-color: #fff;
-    padding: 2rem 1rem;
+.form-container {
     text-align: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
 }
 
-.reviews h2 {
-    margin-bottom: 1rem;
+.form-container .form-toggle {
+    margin-bottom: 20px;
+}
+
+.form-container .toggle-btn {
+    background-color: #f4f4f4;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    color: #4CAF50;
+    font-size: 1em;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-container .toggle-btn.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.form-container .toggle-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.form-container form {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-container form.hidden {
+    display: none;
+}
+
+.form-container form.active {
+    display: block;
+}
+
+.form-container input, .form-container .submit-btn {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container .submit-btn:hover {
+    background-color: #45a049;
 }
 
 .review {
-    max-width: 400px;
-    margin: 0 auto 1rem;
+    background: #eee;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .review-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 24px;
+    margin-right: 10px;
 }
 
-.review p {
-    font-size: 1rem;
-    line-height: 1.4;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
