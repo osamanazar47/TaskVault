@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                event.target.innerText = 'Completed';
+				event.target.innerText = 'Completed';
             } else {
                 alert('Failed to mark task as completed. Please try again.');
             }
