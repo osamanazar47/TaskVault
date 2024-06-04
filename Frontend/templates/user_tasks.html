@@ -15,7 +15,7 @@
                 <h2>My Tasks</h2>
                 <div class="tasks-list">
 					{% for task in tasks %}
-                    <div class="task-item">
+                    <div class="task-item" data-task-id="{{ task.id }}">
                         <p class="task-title">{{ task.title }}</p>
                         <p class="task-due-date">{{ task.due_date }}</p>
                         <p class="task-desc">{{ task.description }}</p>
@@ -30,14 +30,15 @@
             </div>
             <div class="new-task-section">
                 <h2>Create a new task</h2>
-                <form class="new-task-form">
+                <form class="new_task_form" data-userid="{{ user_id }}">
                     <input type="text" id="task_title" name="title" placeholder="Task Title" required>
                     <input type="date" id="task_due_date" name="due_date" required>
                     <textarea id="task_description" name="description" placeholder="Task Description"></textarea>
-                    <button type="submit">Done</button>
+                    <button type="submit">Create Task</button>
                 </form>
             </div>
         </main>
     </div>
+    <script src="{{ url_for('static', filename='js/user_tasks.js') }}"></script>
 </body>
 </html>

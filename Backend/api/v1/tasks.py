@@ -58,7 +58,7 @@ def create_task(user_id):
     return jsonify(new_task.to_dict()), 201
 
 
-@task_bp.route('/users/<user_id>/tasks/<task_id>', methods=['PUT'])
+@task_bp.route('/users/<user_id>/tasks/<task_id>', methods=['PATCH'])
 @jwt_required()
 def update_task(user_id, task_id):
     current_user = get_jwt_identity()
@@ -79,6 +79,9 @@ def update_task(user_id, task_id):
             task.due_date = datetime.fromisoformat(data['due_date'])
         except ValueError:
             return jsonify({'message': 'Invalid date format'}), 400
+
+    if 'completed' in data:
+        task.completed = data['completed']
 
     db.session.commit()
     return jsonify(task.to_dict()), 200

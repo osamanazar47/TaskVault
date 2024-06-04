@@ -10,6 +10,7 @@ class Task(BaseModel):
     description = db.Column(db.String(200), nullable=True)
     due_date = db.Column(db.DateTime, nullable=True)
     user_id = db.Column(db.String(60), db.ForeignKey('users.id'), nullable=False)
+    completed = db.Column(db.Boolean, default=False)
 
     def to_dict(self):
         task_dict = super().to_dict()
@@ -20,5 +21,6 @@ class Task(BaseModel):
             'description': self.description,
             'due_date': self.due_date.isoformat() if self.due_date else None,
             'user_id': self.user_id,
+            'completed': self.completed
         })
         return task_dict
