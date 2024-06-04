@@ -45,6 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				alert('Failed to delete task. Please try again');
 			}
+		} else if (event.target.classList.contains('complete-btn')) {
+            const taskItem = event.target.closest('.task-item');
+            const taskId = taskItem.dataset.taskId;
+
+            const response = await fetch(`http://127.0.0.1:5000/api/users/${userId}/tasks/${taskId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`
+                },
+                body: JSON.stringify({ completed: true })
+            });
+
+            if (response.ok) {
+                event.target.innerText = 'Completed';
+            } else {
+                alert('Failed to mark task as completed. Please try again.');
+            }
 		}
 	});
 });
