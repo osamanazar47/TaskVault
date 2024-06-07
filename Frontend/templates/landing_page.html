@@ -9,8 +9,9 @@
 <body>
     <header class="header">
         <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="TaskVault Logo" class="logo">
             <h1>TaskVault</h1>
-            <p>Secure Your Tasks, Unlock Your Potential</p>
+            <p>Secure Your Tasks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unlock Your Potential</p>
         </div>
     </header>
     <main>
@@ -18,7 +19,17 @@
             <section class="intro">
                 <div class="intro-text">
                     <h2>Welcome to TaskVault</h2>
-                    <p>Where simplicity meets productivity. Whether you're a busy professional striving for work-life balance, a diligent student managing coursework and extracurricular activities, or a devoted parent juggling multiple responsibilities, TaskVault is here to help.</p>
+                </div>
+                <div class="features-section">
+                    <p>Boost your productivity and stay organized with TaskVault:</p>
+                    <ul>
+                        <li><strong>Productivity:</strong> Boost your productivity with intuitive task management.</li>
+                        <li><strong>Organization:</strong> Keep all your tasks organized in one place.</li>
+                        <li><strong>Security:</strong> Your tasks are secure and accessible only to you.</li>
+                        <li><strong>Adaptability:</strong> Perfect for professionals, students, and parents.</li>
+                        <li><strong>Balance:</strong> Achieve work-life balance with ease.</li>
+                    </ul>
+                    <p>Join thousands of satisfied users and get started with TaskVault today!</p>
                 </div>
                 <div class="form-container">
                     <div class="form-toggle">

@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // GSAP animations
     gsap.from('.header', { duration: 1, y: -100, opacity: 0, ease: 'bounce' });
     gsap.from('.intro-text', { duration: 1, x: -200, opacity: 0, delay: 0.5 });
+    gsap.from('.features-section', { duration: 1, opacity: 0, delay: 1 });
     gsap.from('.form-container', { duration: 1, x: 200, opacity: 0, delay: 0.5 });
     gsap.from('.reviews', { duration: 1, y: 200, opacity: 0, delay: 1 });
 });

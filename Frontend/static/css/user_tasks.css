@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: url(../images/background_image.png);
     color: #333;
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     margin: auto;
     overflow: hidden;
     padding: 20px;
-    background-color: #fff;
+    background-color: lightblue;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -21,9 +21,16 @@ body {
 header {
     text-align: center;
     padding: 20px 0;
-    background-color: #333;
+    background-color: rgba(61, 30, 96);
     color: white;
     border-radius: 10px 10px 0 0;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    margin-right: 15px;
+    vertical-align: middle;
 }
 
 header h1 {
@@ -45,13 +52,19 @@ main {
     color: #333;
 }
 
-.tasks-list .task-item {
-    background: #eee;
+.tasks-list {
+    background-color: #f7f9fc; /* Light Blue/Gray */
+    border: 1px solid #e0e7ef; /* Light Blue Border */
+    padding: 20px;
+    border-radius: 8px;
+}
+.task-item {
+    background-color: #ffffff; /* White */
+    border: 1px solid #e0e7ef; /* Light Blue Border */
+    margin-bottom: 10px;
     padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .task-title, .task-due-date, .task-desc {
@@ -96,7 +109,7 @@ main {
 .new-task-section input, .new-task-section textarea, .new-task-section button {
     display: block;
     width: 100%;
-    margin: 10px 0;
+    margin: 10px -8px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -112,6 +125,7 @@ main {
     color: white;
     cursor: pointer;
     border: none;
+    margin-left: 2px;
 }
 
 .new-task-section button:hover {
