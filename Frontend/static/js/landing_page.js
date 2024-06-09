@@ -63,9 +63,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    gsap.from(".header", { duration: 1, y: -100, opacity: 0 });
-    gsap.from(".intro-text", { duration: 1, x: -100, opacity: 0, delay: 0.5 });
-    gsap.from(".features-section", { duration: 1, y: 100, opacity: 0, delay: 1 });
-    gsap.from(".form-container", { duration: 1, x: 100, opacity: 0, delay: 1.5 });
-    gsap.from(".reviews", { duration: 1, y: 100, opacity: 0, delay: 2 });
+
+    // Initialize GSAP and ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+
+    // Header animation
+    gsap.from(".header", {
+        duration: 1,
+        y: -100,
+        opacity: 0,
+        ease: "power2.out"
+    });
+
+    // Intro animation
+    gsap.from(".intro-text", {
+        scrollTrigger: {
+            trigger: ".intro",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        },
+        duration: 1,
+        x: -100,
+        opacity: 0,
+        ease: "power2.out"
+    });
+
+    // Features animation
+    gsap.from(".features-section", {
+        scrollTrigger: {
+            trigger: ".features-section",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        },
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.out"
+    });
+
+    // Form container animation
+    gsap.from(".form-container", {
+        scrollTrigger: {
+            trigger: ".form-container",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        },
+        duration: 1,
+        x: 100,
+        opacity: 0,
+        ease: "power2.out"
+    });
+
+    // Reviews animation
+    gsap.from(".reviews", {
+        scrollTrigger: {
+            trigger: ".reviews",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        },
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.out"
+    });
 });

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -14,17 +18,24 @@ body {
 .header {
     background: linear-gradient(135deg, rgba(61, 30, 96), rgba(61, 30, 96));
     color: white;
-    padding: 60px 0;
+    padding: 50px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    flex-grow: 1;
+    text-align: center;
 }
 
 .logo {
     width: 70px;
     height: auto;
-    margin-right: 15px;
-    vertical-align: middle;
+    margin-left: 20px;
 }
 
 .header h1 {
@@ -35,6 +46,33 @@ body {
 .header p {
     font-size: 1.2em;
     margin: 10px 0 0;
+}
+
+.nav-menu {
+    margin-right: 20px;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu ul li {
+    display: inline;
+}
+
+.nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #4CAF50;
 }
 
 .container {
