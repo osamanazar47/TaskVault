@@ -19,6 +19,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .logo {
     width: 70px;
     height: auto;
@@ -66,25 +67,27 @@ body {
     margin: 20px 0;
 }
 
+.features-section h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.features-section .feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.features-section .feature-image {
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
 .features-section p {
     font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.features-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.features-section li {
-    margin: 10px 0;
-    font-size: 1em;
-}
-
-.features-section li::before {
-    content: '✔';
-    color: #4CAF50;
-    margin-right: 10px;
+    margin: 0;
 }
 
 .form-container {

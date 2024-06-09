@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-            alert('Signup successful! Please log in.');
+            signupForm.reset();
         } else {
-            alert('Signup failed. Please try again.');
+            alert('Signup failed!');
         }
     });
 
@@ -57,16 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             localStorage.setItem('accessToken', data.access_token);
             window.location.href = `http://127.0.0.1:5000/tasks/${data.user_id}`;
-            // Redirect to another page or show user-specific content
+            loginForm.reset();
         } else {
-            alert('Login failed. Please try again.');
+            alert('Login failed!');
         }
     });
 
-    // GSAP animations
-    gsap.from('.header', { duration: 1, y: -100, opacity: 0, ease: 'bounce' });
-    gsap.from('.intro-text', { duration: 1, x: -200, opacity: 0, delay: 0.5 });
-    gsap.from('.features-section', { duration: 1, opacity: 0, delay: 1 });
-    gsap.from('.form-container', { duration: 1, x: 200, opacity: 0, delay: 0.5 });
-    gsap.from('.reviews', { duration: 1, y: 200, opacity: 0, delay: 1 });
+    gsap.from(".header", { duration: 1, y: -100, opacity: 0 });
+    gsap.from(".intro-text", { duration: 1, x: -100, opacity: 0, delay: 0.5 });
+    gsap.from(".features-section", { duration: 1, y: 100, opacity: 0, delay: 1 });
+    gsap.from(".form-container", { duration: 1, x: 100, opacity: 0, delay: 1.5 });
+    gsap.from(".reviews", { duration: 1, y: 100, opacity: 0, delay: 2 });
 });
